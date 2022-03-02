@@ -13,7 +13,12 @@
 
   font-weight: bold;
 
-  svg {
+  img.userAvatar {
+    border-radius: 20px;
+    margin-right: 1rem !important;
+  }
+
+  svg, img.userAvatar {
     width: 20px;
     height: 20px;
   }
@@ -28,5 +33,15 @@
 
   &:hover {
     filter: brightness(0.8);
+  }
+
+  @media (max-width: 720px) {
+    span {
+      display: none;
+    }
+
+    svg:first-child {
+      margin: 0;
+    }
   }
 }

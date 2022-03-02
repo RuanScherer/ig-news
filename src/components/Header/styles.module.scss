@@ -14,6 +14,7 @@
   padding: 0 2rem;
 
   nav {
+    z-index: 2;
     margin-left: 5rem;
     height: 5rem;
 
@@ -59,5 +60,100 @@
 
   > button {
     margin-left: auto;
+  }
+
+  .menuButton {
+    display: none;
+  }
+
+  .closeMenuButton {
+    display: none;
+  }
+
+  @media (max-width: 720px) {
+    nav {
+      margin-left: 3rem;
+    }
+  }
+
+  @media (max-width: 425px) {
+    nav.menuOpened {
+      display: flex;
+      flex-direction: column;
+
+      width: calc(100% - 2rem);
+      height: auto;
+      border-radius: 1.5rem;
+      padding: 1rem 0;
+
+      position: fixed;
+      top: .5rem;
+      right: 1rem;
+
+      background-color: var(--gray-800);
+
+      a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        height: 3.5rem;
+        padding: .5rem;
+        
+        line-height: 1rem;
+        color: var(--gray-300);
+
+        cursor: pointer;
+
+        .closeMenuButton {
+          display: block;
+        }
+        
+        & + a {
+          margin-left: 0;
+          margin-top: .5rem;
+        }
+
+        &:hover {
+          color: var(--white);
+        }
+
+        &.active {
+          color: var(--white);
+          font-weight: bold;
+        }
+
+        &.active::after {
+          display: none;
+        }
+      }
+    }
+
+    nav.menuClosed {
+      display: none;
+    }
+
+    .menuButton {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      height: 3rem;
+      border-radius: 3rem;
+      border: 0;
+      padding: 0 1.5rem;
+      margin-left: .75rem;
+
+      background-color: var(--gray-850);
+
+      svg {
+        width: 20px;
+        height: 20px;
+      }
+
+      &:hover {
+        filter: brightness(0.8);
+      }
+    }
   }
 }
