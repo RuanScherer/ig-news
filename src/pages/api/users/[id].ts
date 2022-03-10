@@ -11,4 +11,3 @@ export default function getUser(request: NextApiRequest, response: NextApiRespon
 
   return response.json(users.find(user => user.id === Number(id)))
 }
-

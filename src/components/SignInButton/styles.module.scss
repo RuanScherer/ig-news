@@ -15,7 +15,7 @@
 
   img.userAvatar {
     border-radius: 20px;
-    margin-right: 1rem !important;
+    margin-right: 1rem;
   }
 
   svg, img.userAvatar {
@@ -40,7 +40,7 @@
       display: none;
     }
 
-    svg:first-child {
+    svg:first-child, img.userAvatar {
       margin: 0;
     }
   }
