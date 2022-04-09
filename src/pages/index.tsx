@@ -36,16 +36,16 @@ export default function Home(props: HomeProps) {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  // const subscriptionPrice = await stripe.prices.retrieve('price_1KXUdMCGcS2L5lkaeVpqLNM1')
+  const subscriptionPrice = await stripe.prices.retrieve('price_1KXUdMCGcS2L5lkaeVpqLNM1')
 
   const product = {
-    priceId: '', // subscriptionPrice.id
+    priceId: subscriptionPrice.id,
     amount: new Intl
       .NumberFormat('en-US', {
         style: 'currency',
         currency: 'USD'
       })
-      .format(9.99) // subscriptionPrice.unit_amount / 100
+      .format(subscriptionPrice.unit_amount / 100)
   }
   
   return {
