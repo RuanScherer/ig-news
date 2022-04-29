@@ -3,6 +3,7 @@ import { SignInButton } from '../SignInButton'
 import { FiMenu, FiX } from 'react-icons/fi'
 import styles from './styles.module.scss'
 import { useState } from 'react'
+import { ActiveLink } from "../ActiveLink"
 
 export function Header() {
   const [isMenuOpened, setIsMenuOpened] = useState(false)
@@ -18,8 +19,12 @@ export function Header() {
         />
 
         <nav className={isMenuOpened ? styles.menuOpened : styles.menuClosed}>
-          <a className={styles.active}>Home</a>
-          <a>Posts</a>
+          <ActiveLink activeClassName={styles.active} href="/">
+            <a>Home</a>
+          </ActiveLink>
+          <ActiveLink activeClassName={styles.active} href="/posts" prefetch>
+            <a>Posts</a>
+          </ActiveLink>
           <a className={styles.closeMenuButton} onClick={() => setIsMenuOpened(!isMenuOpened)}>
             <FiX />
           </a>
