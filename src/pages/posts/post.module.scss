@@ -52,8 +52,8 @@
         }
       }
     }
-
-    a {
+    
+    &:not(.previewContent) a {
       text-decoration: underline;
       color: var(--cyan-500);
 
