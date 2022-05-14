@@ -34,11 +34,31 @@
       margin: 1.5rem 0;
     }
 
+    pre {
+      background-color: var(--gray-800);
+      border-radius: 4px;
+      padding: .5rem 1rem;
+    }
+
     ul {
       padding-left: 1.5rem;
 
       li {
         margin: 0.5rem 0;
+
+        &:before {
+          content: '●';
+          margin-right: 0.5rem;
+        }
+      }
+    }
+
+    a {
+      text-decoration: underline;
+      color: var(--cyan-500);
+
+      &:hover {
+        filter: brightness(.75);
       }
     }
 
